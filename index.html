@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+<title> Dành riêng cho chị em MKT Karofi</title>
+<audio id="bgMusic" src="music.mp3" loop></audio>
+
+<style>
+:root{
+    --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Dancing Script', cursive;
+    overflow:hidden;
+}
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Dancing Script', cursive;
+    overflow:hidden;
+    position:relative;
+}
+
+/* LỚP ẢNH BACKGROUND MỜ */
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Dancing Script', cursive;
+    overflow:hidden;
+    position:relative;
+
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+    
+}
+
+
+/* ❤️ TIM BAY */
+/* 🌸 HOA BAY */
+.flower{
+    position:absolute;
+    bottom:-20px;
+    font-size:22px;
+    animation: floatUp linear forwards;
+    opacity:0.8;
+}
+
+@keyframes floatUp{
+    0%{ transform: translateY(0) scale(0.8); opacity:0; }
+    10%{opacity:1;}
+    100%{ transform: translateY(-110vh) scale(1.2); opacity:0; }
+}
+
+/* FORM */
+.form-box{
+    text-align:center;
+    transition: all 1.2s var(--ease-soft);
+    z-index:5;
+    position:relative;   /* thêm dòng này */
+}
+
+.form-box.hide{
+    opacity:0;
+    transform: translateY(-30px);
+    pointer-events:none;
+}
+
+
+input{
+    padding:14px;
+    border-radius:12px;
+    border:none;
+    width:260px;
+}
+
+button{
+    padding:12px 20px;
+    border-radius:25px;
+    margin-left: 20px;
+    border:none;
+    background: #ff96cc;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff5fa2;
+    
+}
+.top-left-img{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:120px;
+    z-index:999;
+    cursor:pointer;
+    transition:0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.top-left-img:hover{
+    transform: scale(1.08) rotate(-5deg);
+}
+
+/* NÚT QUAY LẠI */
+.top-left-img{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:120px;
+    z-index:9999;      /* cực cao */
+    cursor:pointer;
+    pointer-events:auto;   /* đảm bảo nhận click */
+    transition:0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.top-left-img:hover{
+    transform: scale(1.08) rotate(-5deg);
+}
+
+/* ENVELOPE */
+.envelope{
+    width:540px;
+    height:340px;
+    background:#ffffff;
+    position:absolute;
+    transform:scale(0);
+    transition:all 1.4s var(--ease-soft);
+    border-radius:15px;
+}
+
+.envelope.show{
+    transform:scale(1);
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ffd4da;
+    clip-path: polygon(0 0, 50% 65%, 100% 0);
+    transform-origin:top;
+    transition: transform 1.6s var(--ease-soft);
+}
+
+.envelope.open:before{
+    transform: rotateX(180deg);
+}
+
+/* CARD */
+.card{
+    position:absolute;
+    width:480px;
+    height:280px;
+    background:#fffaf5;
+    top:30px;
+    left:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    box-sizing:border-box;
+    border-radius:20px;
+    transform: translateY(80px);
+    opacity:0;
+    transition: all 1.6s var(--ease-soft);
+    box-shadow:0 30px 60px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+.card.show{
+    transform: translateY(-60px);
+    opacity:1;
+}
+
+.message{
+    font-size:30px;
+    font-weight:bold;
+    color:#b76e79;
+    line-height:1.4;
+}
+
+/* 🌹 ROSE */
+.rose{
+    position:absolute;
+    bottom:10px;
+    right:2px;
+    font-size:55px;
+    transform: scale(0);
+    opacity:0;
+}
+
+.rose.bloom{
+    animation: bloom 1.8s var(--ease-soft) forwards;
+}
+
+@keyframes bloom{
+    0%{ transform: scale(0) rotate(-30deg); opacity:0; }
+    50%{ transform: scale(1.3) rotate(10deg); opacity:1; }
+    100%{ transform: scale(1) rotate(0deg); opacity:1; }
+}
+
+/* SURPRISE BUTTON */
+.surprise-btn{
+    position:absolute;
+    bottom:-70px;
+    left:45%;
+    transform:translateX(-50%);
+    opacity:0;
+    transition:0.8s var(--ease-soft);
+}
+
+.surprise-btn.show{
+    opacity:1;
+}
+
+/* 🎬 VIDEO POPUP */
+.video-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transition:0.6s var(--ease-soft);
+    z-index:30;
+}
+
+.video-popup.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.video-box{
+    position:relative;
+    width:70%;
+    max-width:800px;
+    background:black;
+    border-radius:20px;
+    overflow:hidden;
+    transform:scale(0.85);
+    transition:0.8s var(--ease-soft);
+}
+
+.video-popup.show .video-box{
+    transform:scale(1);
+}
+
+.video-box video{
+    width:100%;
+    display:block;
+}
+
+.close-video{
+    position:absolute;
+    top:12px;
+    right:15px;
+    width:38px;
+    height:38px;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    font-size:20px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:999;
+}
+.floating-text{
+    position:fixed;
+    top:30%;
+    left:-100%;
+    font-size:26px;
+    font-weight:bold;
+    color:rgba(255,255,255,0.85);
+    text-shadow:0 4px 15px rgba(0,0,0,0.3);
+    white-space:nowrap;
+    pointer-events:none;
+    z-index:2;
+    opacity:0;
+    color:#b76e79;
+font-style:italic;
+
+}
+
+/* đặt vị trí từng ảnh */
+.sticker{
+    position:fixed;
+    width:500px;
+    pointer-events:none;
+    z-index:1;
+    /* animation: floatSoft 2s ease-in-out infinite alternate; */
+}
+
+/* Góc trên trái */
+.s1{ top:10%; left:10%; }
+
+/* Trên phải */
+.s2{ top:8%; right:6%; }
+
+/* Giữa trái */
+.s3{ top:55%; left:45%; }
+
+/* Giữa phải */
+.s4{ top:45%; right:4%; }
+
+/* Dưới trái */
+.s5{ bottom:8%; left:7%; }
+
+/* Dưới phải */
+.s6{ bottom: 60%; right:37.5%; }
+
+
+@keyframes floatSoft{
+    from{ transform: translateY(0px) rotate(0deg); }
+    to{ transform: translateY(12px) rotate(6deg); }
+}
+
+.flower-bomb{
+    font-size:40px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.flower-bomb:hover{
+    transform: scale(1.2) rotate(-10deg);
+}
+.intro-image{
+    position:absolute;
+    top:-320px;              /* điều chỉnh cao thấp */
+    left:20%;
+    transform:translateX(-50%);
+    width:300px;
+    opacity:0;
+    animation: fadeInImage 2s ease forwards;
+}
+
+@keyframes fadeInImage{
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+    /* HOA Ở GIỮA PHONG BÌ */
+
+
+}
+
+/* Animation nở */
+.center-flower.bloom{
+    animation: flowerBloom 1.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes flowerBloom{
+    0%{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:0;
+    }
+    40%{
+        transform:translate(-50%,-50%) scale(1.4);
+        opacity:1;
+    }
+    70%{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:0;
+    }
+}
+    /* MŨI TÊN HƯỚNG DẪN */
+.flower-guide{
+    position:absolute;
+    top:90%;
+    left:105%;
+    transform:translateY(-50%);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    opacity:0;
+    pointer-events:none;
+    transition:0.5s ease;
+}
+
+.flower-guide.show{
+    opacity:1;
+}
+
+.arrow{
+    font-size:30px;
+    animation: arrowMove 1s infinite alternate ease-in-out;
+    color:#b76e79;
+}
+
+.guide-text{
+    font-size:22px;
+    font-weight:bold;
+    color:#b76e79;
+    animation: textBlink 1.2s infinite alternate;
+}
+
+@keyframes arrowMove{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(10px); }
+}
+
+@keyframes textBlink{
+    from{ opacity:0.6; }
+    to{ opacity:1; }
+}
+
+
+
+
+</style>
+</head>
+<div class="floating-text" id="floatingText"></div>
+<body>
+
+
+    <img src="../happy womens day/assets/logo.png"  class="top-left-img" onclick="goHome()" >
+    <!-- <img src="./happy womens day/assets/img1.jpg" class="sticker s1">
+<img src="./happy womens day/assets/tha-tim-11.png" class="sticker s2">
+<img src="../Desktop/happy womens day/assets/meme-chi-tay-ra-sau.png" class="sticker s3" style="scale: 200%  "> -->
+<!-- <img src="hoa2.png" class="sticker sticker4"> -->
+<img src="../happy womens day/assets/ảnh 1.png.jpg" class="sticker s6" >
+
+<div class="form-box" id="formBox">
+   <!-- <img src="./happy womens day/assets/pngtree-8-march-happy-womens-day-lettering-png-image_8997445.png" class="intro-image"> -->
+    <input type="text" id="nameInput" placeholder="Tên chị/em là gì nhỉ...">
+    <button onclick="sendWish()">Oke</button>
+</div>
+
+<div class="envelope" id="envelope">
+   <div class="center-flower" id="centerFlower">🌸</div>
+    <div class="card" id="card">
+        <div class="message" id="message"></div>
+        <div class="rose" id="rose" onclick="explodeFlowers()">🌹</div>
+        <div style="display:flex; gap:20px; align-items:center; justify-content:center;">
+    <button class="surprise-btn" id="surpriseBtn" onclick="showVideo()"> Món quà đặc biệt nè </button>
+    <div class="flower-guide" id="flowerGuide">
+    <span class="arrow">⬅</span>
+    <span class="guide-text"> Nhấn vào bông hoa</span>
+</div>
+</div>
+    </div>
+</div>
+
+<div class="video-popup" id="videoPopup">
+    <div class="video-box">
+        <div class="close-video" onclick="closeVideo()">✖</div>
+        <video id="surpriseVideo" src="video.mp4" controls></video>
+    </div>
+</div>
+
+<script>
+
+function createFlower(){
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+
+    const flowers = ["🌸","🌺","🌼","🌷"];
+    flower.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+
+    flower.style.left = Math.random()*100 + "vw";
+    flower.style.fontSize = (18 + Math.random()*28) + "px";
+    flower.style.animationDuration = (7 + Math.random()*4) + "s";
+
+    document.body.appendChild(flower);
+    setTimeout(()=>{ flower.remove(); },11000);
+}
+setInterval(createFlower,600);
+
+/* LỜI CHÚC */
+const wishes = [
+    "có một ngày ngập tràn hoa hồng, quà 8/3 và những lời chúc từ mọi người. Chúc bạn luôn tươi tắn, xinh xắn đáng yêu và ngày càng thành công trên con đường mình chọn 💖",
+    "luôn thành công trong công việc, hạnh phúc trong tình yêu và trọn vẹn cuộc sống🌸",
+    "ngày 8/3 rạng rỡ như hoa hướng dương, lúc nào cũng tràn đầy năng lượng tích cực",
+    "không chỉ gặt hái được nhiều thành công, KPI luôn vượt mức mà còn luôn xinh đẹp, trẻ trung và tràn đầy năng lượng tích cực"
+    
+];
+
+function sendWish(){
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.8;
+    music.play();
+    let name = document.getElementById("nameInput").value.trim();
+    if(!name){
+        alert("Cho iêm xin tên đi mà :((((");
+        return;
+    }
+    const titles = [
+    "cưng",
+    "nàng thơ",
+    "fen",
+    "bông hoa xinh đẹp",
+    "mỹ nhân",
+    "người đẹp"
+];
+
+    let randomIndex = Math.floor(Math.random()*wishes.length);
+    let randomTitle = titles[Math.floor(Math.random()*titles.length)];
+let finalText = "Dear " + name + ", chúc " + randomTitle + " " + wishes[randomIndex];
+
+    document.getElementById("formBox").classList.add("hide");
+    document.querySelectorAll(".sticker").forEach(el=>el.style.display="none");
+    
+
+    setTimeout(()=>{
+        let envelope = document.getElementById("envelope");
+        envelope.classList.add("show");
+       
+
+        setTimeout(()=>{
+            envelope.classList.add("open");
+
+            setTimeout(()=>{
+                let card = document.getElementById("card");
+                card.classList.add("show");
+
+                setTimeout(()=>{
+                    document.getElementById("rose").classList.add("bloom");
+                    typeEffect(finalText, document.getElementById("message"));
+                },1000);
+
+            },1200);
+
+        },1200);
+
+    },800);
+}
+
+function typeEffect(text, element){
+    element.innerHTML="";
+    let i = 0;
+
+    function typing(){
+        if(i < text.length){
+            element.innerHTML += text.charAt(i);
+            i++;
+            let randomSpeed = 120 + Math.random()*150;
+            setTimeout(typing, randomSpeed);
+        }else{
+            document.getElementById("surpriseBtn").classList.add("show");
+            document.getElementById("flowerGuide").classList.add("show");
+        }
+    }
+
+    typing();
+}
+
+/* VIDEO */
+function showVideo(){
+    const popup = document.getElementById("videoPopup");
+    const video = document.getElementById("surpriseVideo");
+    popup.classList.add("show");
+    const music = document.getElementById("bgMusic");
+    video.play();
+     music.pause();   // 🔇 tắt nhạc nền
+}
+
+function closeVideo(){
+    const popup = document.getElementById("videoPopup");
+    const video = document.getElementById("surpriseVideo");
+    const music = document.getElementById("bgMusic");
+
+    video.pause();
+    video.currentTime = 0;
+    popup.classList.remove("show");
+    music.play();
+}
+
+function goHome(){
+    closeVideo();
+    document.getElementById("envelope").classList.remove("show","open");
+    document.getElementById("card").classList.remove("show");
+    document.getElementById("rose").classList.remove("bloom");
+    document.getElementById("surpriseBtn").classList.remove("show");
+    document.getElementById("message").innerHTML="";
+    document.getElementById("nameInput").value="";
+    document.getElementById("formBox").classList.remove("hide");
+    document.querySelectorAll(".sticker").forEach(el=>el.style.display="block");
+}
+// const floatingMessages = [
+//     "Chúc một ngày 8/3 thật dịu dàng 💐",
+//     "Bạn xứng đáng được yêu thương 💖",
+//     "Luôn rạng rỡ nhé ✨",
+//     "Mãi xinh đẹp và hạnh phúc 🌸"
+// ];
+
+function showFloatingText(){
+    const el = document.getElementById("floatingText");
+    const randomIndex = Math.floor(Math.random()*floatingMessages.length);
+    el.innerText = floatingMessages[randomIndex];
+
+    const randomTop = 20 + Math.random()*50;
+    el.style.top = randomTop + "%";
+
+    el.style.transition = "none";
+    el.style.left = "-100%";
+    el.style.opacity = "0";
+
+    setTimeout(()=>{
+        el.style.transition = "all 8s cubic-bezier(0.33, 1, 0.68, 1)";
+        el.style.left = "110%";
+        el.style.opacity = "1";
+    },100);
+
+    setTimeout(()=>{
+        el.style.opacity = "0";
+    },7000);
+}
+
+setInterval(()=>{
+    if(Math.random() > 0.5){  // 50% cơ hội xuất hiện
+        showFloatingText();
+    }
+},5000);
+
+function explodeFlowers(){
+    for(let i=0;i<50;i++){
+        const flower = document.createElement("div");
+        flower.innerHTML = "🌷";
+        flower.style.position="fixed";
+        flower.style.left="50%";
+        flower.style.top="55%";
+        flower.style.fontSize = (20 + Math.random()*20) + "px";
+        flower.style.pointerEvents="none";
+        flower.style.transition="all 1.5s ease-out";
+
+        document.body.appendChild(flower);
+
+        const angle = Math.random()*2*Math.PI;
+        const distance = 200 + Math.random()*150;
+
+        const x = Math.cos(angle)*distance;
+        const y = Math.sin(angle)*distance;
+
+        setTimeout(()=>{
+            flower.style.transform = `translate(${x}px,${y}px) rotate(${Math.random()*360}deg)`;
+            flower.style.opacity="0";
+        },50);
+
+        setTimeout(()=>{
+            flower.remove();
+        },1600);
+    }
+}
+
+
+</script>
+
+</body>
+</html>
