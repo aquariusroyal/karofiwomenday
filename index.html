@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
-<title> Dành riêng cho chị em MKT Karofi</title>
+<title> Hihihihi</title>
 <audio id="bgMusic" src="assets/bgmusic.mp3" loop></audio>
 
 <style>
@@ -519,17 +519,16 @@ function sendWish(){
         return;
     }
     const titles = [
-    "cưng",
     "nàng thơ",
-    "fen",
-    "bông hoa xinh đẹp",
+    "bông hoa xinh đẹp mang tên",
+    "idol", 
     "mỹ nhân",
-    "người đẹp"
+    "người đẹp tên"
 ];
 
     let randomIndex = Math.floor(Math.random()*wishes.length);
     let randomTitle = titles[Math.floor(Math.random()*titles.length)];
-let finalText = "Dear " + name + ", chúc " + randomTitle + " " + wishes[randomIndex];
+let finalText = "Chúc" + "" + randomTitle + name + " " + wishes[randomIndex];
 
     document.getElementById("formBox").classList.add("hide");
     document.querySelectorAll(".sticker").forEach(el=>el.style.display="none");
@@ -683,6 +682,7 @@ function explodeFlowers(){
 </body>
 
 </html>
+
 
 
 
