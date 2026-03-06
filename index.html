@@ -600,7 +600,6 @@ function closeVideo(){
 
 function goHome(){
     closeVideo();
-    music.stop();
     document.getElementById("envelope").classList.remove("show","open");
     document.getElementById("card").classList.remove("show");
     document.getElementById("rose").classList.remove("bloom");
@@ -609,6 +608,7 @@ function goHome(){
     document.getElementById("nameInput").value="";
     document.getElementById("formBox").classList.remove("hide");
     document.querySelectorAll(".sticker").forEach(el=>el.style.display="block");
+    music.stop();
 }
 // const floatingMessages = [
 //     "Chúc một ngày 8/3 thật dịu dàng 💐",
@@ -682,6 +682,7 @@ function explodeFlowers(){
 </body>
 
 </html>
+
 
 
 
