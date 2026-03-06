@@ -528,7 +528,7 @@ function sendWish(){
 
     let randomIndex = Math.floor(Math.random()*wishes.length);
     let randomTitle = titles[Math.floor(Math.random()*titles.length)];
-let finalText = "Chúc" + "" + randomTitle + name + " " + wishes[randomIndex];
+let finalText = "Chúc" + " " + randomTitle + " "+ name + " " + wishes[randomIndex];
 
     document.getElementById("formBox").classList.add("hide");
     document.querySelectorAll(".sticker").forEach(el=>el.style.display="none");
@@ -682,6 +682,7 @@ function explodeFlowers(){
 </body>
 
 </html>
+
 
 
 
